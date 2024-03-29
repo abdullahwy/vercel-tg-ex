@@ -6,4 +6,8 @@
             "use": "@vercel/node"
         }
     ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 694587b6da56a2ac9eaf24405fe7da9415d17e71
