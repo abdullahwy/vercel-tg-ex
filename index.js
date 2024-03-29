@@ -1,6 +1,8 @@
 const TelegramBot = require('node-telegram-bot-api');
 const { messageTypes } = require('node-telegram-bot-api/src/telegram');
 const shortUrl = require("node-url-shortener");
+const express = require('express'); 
+  
 
 
 // replace the value below with the Telegram token you receive from @BotFather
@@ -76,3 +78,19 @@ bot.onText('Help 🤖', (msg, match) =>{
   };
   bot.sendMessage(msg.from.id, text, opts);
 })
+
+const app = express(); 
+const PORT = 80; 
+
+app.get('/', (req, res)=>{ 
+  res.status(200); 
+  res.send("<h1>Server Running... 🤖</h1>"); 
+}); 
+  
+app.listen(PORT, (error) =>{ 
+    if(!error) 
+        console.log("Server is Successfully Running, and App is listening on port "+ PORT) 
+    else 
+        console.log("Error occurred, server can't start", error); 
+    } 
+); 
